@@ -19,7 +19,7 @@ export default {
     },
     created() {
     this.$http
-          .get('http://172.20.10.8:8081/api/_pending/tasks?query=active:true&sort=id,desc', {
+          .get('http://34.66.181.179:8081/api/_pending/tasks?query=active:true&sort=id,desc', {
             // Attach the JWT header
             headers: { Authorization: 'Bearer ' + localStorage.token }
           }).then(response => {

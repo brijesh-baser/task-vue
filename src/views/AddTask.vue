@@ -87,7 +87,7 @@ export default {
     },
     methods: {
         save: async function () {
-            await this.$http.post('http://172.20.10.8:8081/api/tasks', JSON.stringify(this.task), 
+            await this.$http.post('http://34.66.181.179:8081/api/tasks', JSON.stringify(this.task), 
             {
             // Attach the JWT header
             headers: { Authorization: 'Bearer ' + localStorage.token }

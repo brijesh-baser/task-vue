@@ -48,7 +48,7 @@ export default {
     },
     methods: {
         login: async function() {
-            var response = await this.$http.post('http://172.20.10.8:8081/api/authenticate', JSON.stringify(this.loginForm));
+            var response = await this.$http.post('http://34.66.181.179:8081/api/authenticate', JSON.stringify(this.loginForm));
             console.log(response.data);
             localStorage.token = response.data['id_token'];
             this.$router.push('/')

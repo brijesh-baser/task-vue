@@ -65,7 +65,7 @@ export default {
     },
     created() {
         this.$http
-          .get('http://172.20.10.8:8081/api/tasks/' +this.$route.params.id, {
+          .get('http://34.66.181.179:8081/api/tasks/' +this.$route.params.id, {
             // Attach the JWT header
             headers: { Authorization: 'Bearer ' + localStorage.token }
           }).then(response => {
@@ -91,7 +91,7 @@ export default {
     },
     methods: {
         save: async function () {
-            await this.$http.put('http://172.20.10.8:8081/api/tasks', JSON.stringify(this.task), 
+            await this.$http.put('http://34.66.181.179:8081/api/tasks', JSON.stringify(this.task), 
             {
                 // Attach the JWT header
                 headers: { Authorization: 'Bearer ' + localStorage.token }
@@ -99,7 +99,7 @@ export default {
         },
         updateStatus: async function (event) {
             this.task.status = event;
-            await this.$http.put('http://172.20.10.8:8081/api/tasks', JSON.stringify(this.task), 
+            await this.$http.put('http://34.66.181.179:8081/api/tasks', JSON.stringify(this.task), 
             {
                 // Attach the JWT header
                 headers: { Authorization: 'Bearer ' + localStorage.token }
@@ -107,7 +107,7 @@ export default {
         },
         updatePriority: async function (event) {
             this.task.priority = event;
-            await this.$http.put('http://172.20.10.8:8081/api/tasks', JSON.stringify(this.task), 
+            await this.$http.put('http://34.66.181.179:8081/api/tasks', JSON.stringify(this.task), 
             {
                 // Attach the JWT header
                 headers: { Authorization: 'Bearer ' + localStorage.token }
@@ -115,21 +115,21 @@ export default {
         },
         updateActive: async function (event) {
             this.task.active = event;
-            await this.$http.put('http://172.20.10.8:8081/api/tasks', JSON.stringify(this.task), 
+            await this.$http.put('http://34.66.181.179:8081/api/tasks', JSON.stringify(this.task), 
             {
                 // Attach the JWT header
                 headers: { Authorization: 'Bearer ' + localStorage.token }
             })
         },
         addToTodayTask: async function() {
-            await this.$http.post('http://172.20.10.8:8081/api/add-today-task/' + this.task.id, {},
+            await this.$http.post('http://34.66.181.179:8081/api/add-today-task/' + this.task.id, {},
             {
             // Attach the JWT header
             headers: { Authorization: 'Bearer ' + localStorage.token }
           })
         },
         removeFromTodayTask: async function() {
-            await this.$http.post('http://172.20.10.8:8081/api/remove-today-task/' + this.task.id, {},
+            await this.$http.post('http://34.66.181.179:8081/api/remove-today-task/' + this.task.id, {},
             {
             // Attach the JWT header
             headers: { Authorization: 'Bearer ' + localStorage.token }
@@ -137,7 +137,7 @@ export default {
         },
         syncTodayTask() {
             this.$http
-            .get('http://172.20.10.8:8081/api/is-today-task/' + this.task.id, {
+            .get('http://34.66.181.179:8081/api/is-today-task/' + this.task.id, {
                 // Attach the JWT header
                 headers: { Authorization: 'Bearer ' + localStorage.token }
             }).then(response => {
